@@ -1,0 +1,64 @@
+﻿@model CustomerDataRecord.Models.RegisterViewModel
+<br />
+<div class="center jumbotron">
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class=" infobox text-center">
+            Please create a new account here. If you have already have one, you can @Html.ActionLink("Log in  here !", "Login")           
+        </div>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-md-10  col-md-offset-3">
+
+                <div class="form-group">
+
+                    @*@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })*@
+                    <span class="glyphicon glyphicon-envelope col-md-2 control-label "></span>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    @*@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })*@
+                    <span class="glyphicon glyphicon-envelope col-md-2 control-label "></span>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <span class="glyphicon glyphicon-lock col-md-2 control-label "></span>
+
+                    @* @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })*@
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <span class="glyphicon glyphicon-check col-md-2 control-label "></span>
+                    @* @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })*@
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-default" value="Register" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2"></div>
+
+        </div>
+    }
+</div>

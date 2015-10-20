@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CustomerDataRecord.Models.Company>
+
+<div class="container">
+    <div class="tablecenter">
+
+        <h2 class="thcenter"> Company List </h2>
+        
+        <table class="table table-bordered table-responsive table-hover table-condensed table-striped" id="myTable">
+            <thead style="font-size:16px;">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CompanyName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CompanyAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Country)
+                    </th>
+               
+                    @*<th class="text-center thcenter">Action</th>*@
+                  
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+                        @*<td class="thcenter">
+                            @Html.ActionLink("Edit", "FindCompanyForCustomer", new { id = item.CompanyID }) |
+
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CompanyID })
+                        </td>*@
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+</div>
+</div>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

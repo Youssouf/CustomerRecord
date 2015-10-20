@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CustomerDataRecord.Models.Company>
+
+@{
+    ViewBag.Title = "FindCompanyForCustomer";
+}
+
+<h2>FindCompanyForCustomer</h2>
+
+<p>
+    @Html.ActionLink("Back to list", "Index")
+</p>
+<table class="table table-bordered table-responsive table-hover table-condensed table-striped" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            
+        </tr>
+    </thead> <tbody>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { controller = "Companies" }, new { id = item.CompanyID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CompanyID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CompanyID })
+            </td>*@
+        </tr>
+    }
+</tbody>
+
+</table>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - PDM Technology</title>
+        @Styles.Render("~/Content/css")
+     <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" /> 
+    @*<link href="~/Content/DataTables/css/dataTables.bootstrap.css" rel="stylesheet" />*@   
+    <link href="~/Content/DataTables/css/jquery.dataTables_themeroller.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+    @{ //Html.RenderPartial("_NavbarCarrouselView");
+      //Html.RenderPartial("_SecondNavBarCarousel");
+      Html.RenderPartial("_NavbarCarrouselPartialView");
+    }
+
+    <div class="container body-content" id="contbody">
+
+        @RenderBody()
+        <hr />
+    </div> <!--  </div> end body content -->
+
+    <footer class="container">
+        <!-- Removing the container class, the footer will take all creen-->
+        <div class="row">
+            <div class="col-md-3">
+                <address>
+                    Sønderbro 7, 2.th <br />
+                    9000 Aalborg <br />
+                    Denmark
+                </address>
+            </div>
+            <div class="col-md-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2170.56630482471!2d9.931346!3d57.041847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464932ec0e0767fb%3A0xebdb78525d67d3f!2sS%C3%B8nderbro+7%2C+9000+Aalborg%2C+Danmark!5e0!3m2!1sda!2s!4v1431202650375" width="250" height="150" frameborder="0" style="border:0"></iframe>
+
+            </div>
+            <div class="col-md-3">
+
+                <address>
+                    Sønderbro 7, 2.th <br />
+                    9000 Aalborg <br />
+                    Denmark
+                </address>
+
+            </div>
+            <div class="col-md-3">
+                <address>
+                    Sønderbro 7, 2.th <br />
+                    9000 Aalborg <br />
+                    Denmark
+                </address>
+
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-8">
+                    <ul class="nav navbar-nav pull-right">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                        <li>@Html.ActionLink("Customer", "Index", "Customers")</li>
+                        <li>@Html.ActionLink("Company", "Index", "Companies")</li>
+                        @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                        @*<li>@Html.ActionLink("Employees", "Index", "Employees")</li>*@
+                    </ul>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    &copy; @DateTime.Now.Year
+                </div>
+            </div>
+        </div> <!--The end of bottom body-->
+    </footer>
+    <!--   </div> -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    @*<script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.js"></script>*@
+
+    <script src="~/Scripts/customDataTables.js"></script>
+
+    <script src="~/Scripts/customCarousel.js"></script>
+    
+    <script src="~/Scripts/DetailsViews.js"></script>
+    
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+   
+</body>
+</html>

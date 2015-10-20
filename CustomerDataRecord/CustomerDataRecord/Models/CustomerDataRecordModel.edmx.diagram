@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb15b0ceed70428eb6ba007adcd3e002" Name="Diagram1">
+        <EntityTypeShape EntityType="CustomerDataModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.AspNetUsers" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.Categories" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.Company" Width="1.5" PointX="6" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.Customer" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.Customer_Company" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.Employees" Width="1.5" PointX="8.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.Orders" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.Product" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerDataModel.Supplier" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="CustomerDataModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.FK_Product_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.FK_Customer_Company_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.FK_Employees_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.FK_Customer_Company_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.FK_Orders_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.FK_Orders_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.FK_Product_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerDataModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

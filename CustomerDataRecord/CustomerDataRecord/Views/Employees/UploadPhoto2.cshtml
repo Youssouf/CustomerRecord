@@ -1,0 +1,14 @@
+﻿@model CustomerDataRecord.Models.Employees
+
+@{
+    ViewBag.Title = "UploadPhoto2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UploadPhoto2</h2>
+@using (Html.BeginForm("UploadPhoto", "Employees", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Upload Image:</label>
+    <input type="file" name="file" id="file" style="width: 100%;" />
+    <input type="submit" value="Upload" class="submit" />
+}

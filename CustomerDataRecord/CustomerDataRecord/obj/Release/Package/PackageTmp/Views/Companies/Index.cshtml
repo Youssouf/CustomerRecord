@@ -1,0 +1,101 @@
+﻿@model IEnumerable<CustomerDataRecord.Models.Company>
+
+<h2 class="text-center"> Companies Information</h2>
+
+<div id="custview"></div>
+
+<p>
+    <span>
+        <a href="@Url.Action("Create")" class="btn btn-primary">
+
+            <span class="glyphicon glyphicon-user"></span> Create  new company
+        </a>
+
+    </span>
+</p>
+<table class="table table-striped table-bordered table-condensed table-hover" id="myTable" >
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>Action</th>
+            <th>View Customer</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    <span>
+                        <a href="@Url.Action("Edit", new  { id = item.CompanyID })" class="btn btn-primary">
+
+                            <span class="glyphicon glyphicon-pencil"></span> Edit
+                        </a>
+
+                    </span> |
+
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.CompanyID }, new { @class = "btn btn-primary" })*@
+
+                    @Ajax.ActionLink("Delete", "Delete", new { id = item.CompanyID }, new AjaxOptions
+               {
+                   HttpMethod = "Get",
+                   UpdateTargetId = "custview",
+                   InsertionMode = InsertionMode.Replace
+
+               }, new { @class = "btn btn-primary" } 
+               )
+
+                </td>
+
+
+
+
+
+
+
+                <td>
+                    @Ajax.ActionLink("View Customers", "FindCustomerForCompany", new { id = item.CompanyID }, new AjaxOptions
+               {
+                   HttpMethod = "Get",
+                   UpdateTargetId = "custview",                 
+                   InsertionMode = InsertionMode.Replace
+               }, new { @class ="btn btn-primary"}
+               )|
+                    @Ajax.ActionLink("Employees", "GetCompanyEmployees", new { id = item.CompanyID}, new AjaxOptions
+               {
+                   HttpMethod = "Get",
+                   UpdateTargetId = "custview",
+                   InsertionMode = InsertionMode.Replace
+               }, new { @class = "btn btn-primary" }
+               )
+
+
+                    @*@Html.ActionLink("View Customer", "FindCustomerForCompany", new { id = item.CompanyID },
+                     new { @class = "btn btn-primary" })*@
+                </td>
+
+
+
+            </tr>
+        }
+    </tbody>
+
+</table>

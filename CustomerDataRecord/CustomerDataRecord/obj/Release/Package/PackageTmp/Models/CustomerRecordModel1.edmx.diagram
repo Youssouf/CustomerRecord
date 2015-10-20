@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1d3f378ca30c4949855770609ad0e45a" Name="Diagram1">
+        <EntityTypeShape EntityType="CustomerData2Model.Company" Width="1.5" PointX="1.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerData2Model.Customer" Width="1.5" PointX="5.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerData2Model.Customer_Company" Width="1.5" PointX="3.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="CustomerData2Model.FK_Customer_Company_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CustomerData2Model.FK_Customer_Company_Customer" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CustomerData2Model.tbUserRegister" Width="1.5" PointX="8.5" PointY="2.375" />
+        <EntityTypeShape EntityType="CustomerData2Model.Orders" Width="1.5" PointX="8.125" PointY="5.875" />
+        <EntityTypeShape EntityType="CustomerData2Model.Product" Width="1.5" PointX="8.125" PointY="10.125" />
+        <EntityTypeShape EntityType="CustomerData2Model.Supplier" Width="1.5" PointX="5.875" PointY="10.125" />
+        <EntityTypeShape EntityType="CustomerData2Model.OrderDetails" Width="1.5" PointX="10.375" PointY="6.375" />
+        <AssociationConnector Association="CustomerData2Model.FK_Orders_Customer" />
+        <AssociationConnector Association="CustomerData2Model.FK_OrderDetails_Orders" />
+        <AssociationConnector Association="CustomerData2Model.FK_OrderDetails_Product" />
+        <AssociationConnector Association="CustomerData2Model.FK_Product_Supplier" />
+        <EntityTypeShape EntityType="CustomerData2Model.Categories" Width="1.5" PointX="5.875" PointY="19.75" />
+        <AssociationConnector Association="CustomerData2Model.FK_Product_Categories" />
+        <EntityTypeShape EntityType="CustomerData2Model.Employees" Width="1.5" PointX="3.875" PointY="14.375" />
+        <AssociationConnector Association="CustomerData2Model.FK_Employees_Company" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

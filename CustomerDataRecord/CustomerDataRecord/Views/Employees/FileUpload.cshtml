@@ -1,0 +1,9 @@
+﻿@model CustomerDataRecord.Models.Employees
+
+@using (Html.BeginForm("FileUpload", "Employees", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Upload Image:</label>
+    <input type="file" name="file" id="file" style="width: 100%;" />
+   <!-- <input type="submit" value="Upload" class="submit" /> -->
+}
+
